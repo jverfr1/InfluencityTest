@@ -2,7 +2,7 @@
 var TwitInfo = require('../models/TwitRequest');
 var Scrape = require('../scrape');
 
-function getData(req,res) {
+function getLog(req,res) {
 	TwitInfo.find({}, (err,data)=> {
 		res.status(200).send(data);
 	})
@@ -37,6 +37,6 @@ function getUserInfo(req,res) {
 }
 
 module.exports = {
-	getData,
+	getLog,
 	getUserInfo
 }
