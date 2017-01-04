@@ -23,9 +23,9 @@ function getUserInfo(req,res) {
 		    		console.log(err);
 		    		return res.status(500).send({message: "Errors"});
 		    	}	
-		    	res.status(200).json({data: response});
-		    console.log("favorito instanciado");
+		    	return res.status(200).json({data: response});
 		    	});
+		    console.log("Log saved");
         })
     .catch(
         // Log the rejection reason
