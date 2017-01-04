@@ -4,7 +4,7 @@ var Scrape = require('../scrape');
 
 function getData(req,res) {
 	TwitInfo.find({}, (err,data)=> {
-		res.send(data);
+		res.status(200).send(data);
 	})
 }
 function getUserInfo(req,res) {
@@ -23,7 +23,7 @@ function getUserInfo(req,res) {
 		    		console.log(err);
 		    		return res.status(500).send({message: "Errors"});
 		    	}	
-		    	res.status(201).json({data: response});
+		    	res.status(200).json({data: response});
 		    console.log("favorito instanciado");
 		    	});
         })
