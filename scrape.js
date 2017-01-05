@@ -5,7 +5,6 @@ var x = Xray();
 
 function getInfo(userId,res) {
 	return new Promise((resolve,reject) => {
-		console.log("Scrape before");
 		x(`https://twitter.com/${userId}`, {
 			image: 'img.ProfileAvatar-image@src',
 			tweets: 'a[data-nav="tweets"] span.ProfileNav-value',
@@ -17,7 +16,6 @@ function getInfo(userId,res) {
 				if (!response.bio) {
 					response.bio = "No bio available";
 				}
-				console.log(response);
 			});		
 	});
 }
